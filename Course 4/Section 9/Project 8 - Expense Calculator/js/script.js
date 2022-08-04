@@ -18,7 +18,6 @@ const darkStyleBtn = document.querySelector('.dark');
 let root = document.documentElement;
 let transactionID = 0;
 let categoryIcon;
-let selectedCategory;
 let money = [];
 
 const showPanel = () => {
