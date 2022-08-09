@@ -35,7 +35,7 @@ const setTime = () => {
 const appUpdate = () => {
   eventSpan.textContent = eventName.value;
   usersTime = new Date(
-    `${eventDay.value} ${eventMonth.value} ${eventYear.value}`
+    `${eventMonth.value} ${eventDay.value} ${eventYear.value}`
   );
   imageSection.style.backgroundImage = `url('${eventImg.value}')`;
   setTime();
