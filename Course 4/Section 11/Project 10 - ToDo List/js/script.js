@@ -34,6 +34,19 @@ const prepareDOMEvents = () => {
   todoInput.addEventListener('keyup', enterCheck);
 };
 
+const addNewTask = () => {
+  if (todoInput.value !== '') {
+    newTask = document.createElement('li');
+    newTask.setAttribute('id', `todo-${++idNumber}`);
+    newTask.textContent = todoInput.value;
+    ulList.append(newTask);
+    todoInput.value = '';
+    alertInfo.textContent = '';
+  } else {
+    alertInfo.textContent = 'Wpisz treść zadania!';
+  }
+};
+
 const enterCheck = e => {
   if (e.key === 'Enter') addNewTask();
 };
