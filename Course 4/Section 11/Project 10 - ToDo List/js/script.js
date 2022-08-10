@@ -30,6 +30,12 @@ const prepareDOMElements = () => {
   closeTodoBtn = document.querySelector('.cancel');
 };
 
-const prepareDOMEvents = () => {};
+const prepareDOMEvents = () => {
+  todoInput.addEventListener('keyup', enterCheck);
+};
+
+const enterCheck = e => {
+  if (e.key === 'Enter') addNewTask();
+};
 
 document.addEventListener('DOMContentLoaded', main);
