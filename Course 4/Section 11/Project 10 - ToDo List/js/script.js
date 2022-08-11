@@ -39,12 +39,22 @@ const addNewTask = () => {
     newTask = document.createElement('li');
     newTask.setAttribute('id', `todo-${++idNumber}`);
     newTask.textContent = todoInput.value;
+    createToolsArea();
     ulList.append(newTask);
     todoInput.value = '';
     alertInfo.textContent = '';
   } else {
     alertInfo.textContent = 'Wpisz treść zadania!';
   }
+};
+
+const createToolsArea = () => {
+  const toolsPanel = document.createElement('div');
+  toolsPanel.classList.add('tools');
+  toolsPanel.innerHTML = `<button class="complete"><i class="fas fa-check"></i></button>
+  <button class="edit">EDIT</button>
+  <button class="delete"><i class="fas fa-times"></i></button>`;
+  newTask.append(toolsPanel);
 };
 
 const enterCheck = e => {
