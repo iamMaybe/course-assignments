@@ -1,16 +1,16 @@
-let todoInput;
-let alertInfo;
-let addBtn;
-let ulList;
-let newTask;
-let allTasks;
-let idNumber = 0;
-let popup;
-let popupInfo;
-let editedTodo;
-let popupInput;
-let addPopupBtn;
-let closeTodoBtn;
+let todoInput,
+  alertInfo,
+  addBtn,
+  ulList,
+  newTask,
+  allTasks,
+  idNumber = 0,
+  popup,
+  popupInfo,
+  editedTodo,
+  popupInput,
+  addPopupBtn,
+  closeTodoBtn;
 
 const main = () => {
   prepareDOMElements();
