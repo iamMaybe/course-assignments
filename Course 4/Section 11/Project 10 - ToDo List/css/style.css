@@ -28,6 +28,10 @@ h1 {
   text-transform: uppercase;
 }
 
+.fas {
+  pointer-events: none;
+}
+
 .todo {
   width: 800px;
   text-align: center;
