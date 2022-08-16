@@ -32,6 +32,7 @@ const prepareDOMElements = () => {
 
 const prepareDOMEvents = () => {
   todoInput.addEventListener('keyup', enterCheck);
+  ulList.addEventListener('click', checkClick);
 };
 
 const addNewTask = () => {
@@ -59,6 +60,17 @@ const createToolsArea = () => {
 
 const enterCheck = e => {
   if (e.key === 'Enter') addNewTask();
+};
+
+const checkClick = e => {
+  if (e.target.matches('.complete')) {
+    e.target.closest('li').classList.toggle('completed');
+    e.target.classList.toggle('completed');
+  } else if (e.target.matches('.edit')) {
+    console.log('edit');
+  } else if (e.target.matches('.delete')) {
+    console.log('delete');
+  }
 };
 
 document.addEventListener('DOMContentLoaded', main);
