@@ -8,8 +8,8 @@ let todoInput,
   popupInfo,
   todoToEdit,
   popupInput,
-  addPopupBtn,
-  closeTodoBtn;
+  popupAddBtn,
+  popupCloseBtn;
 
 const main = () => {
   prepareDOMElements();
@@ -24,13 +24,16 @@ const prepareDOMElements = () => {
   popup = document.querySelector('.popup');
   popupInfo = document.querySelector('.popup-info');
   popupInput = document.querySelector('.popup-input');
-  addPopupBtn = document.querySelector('.accept');
-  closeTodoBtn = document.querySelector('.cancel');
+  popupAddBtn = document.querySelector('.accept');
+  popupCloseBtn = document.querySelector('.cancel');
 };
 
 const prepareDOMEvents = () => {
+  addBtn.addEventListener('click', addNewTask);
   todoInput.addEventListener('keyup', enterCheck);
   ulList.addEventListener('click', checkClick);
+  popupAddBtn.addEventListener('click', changeTodoText);
+  popupCloseBtn.addEventListener('click', closePopup);
 };
 
 const addNewTask = () => {
@@ -75,6 +78,20 @@ const editTask = e => {
   todoToEdit = e.target.closest('li');
   popupInput.value = todoToEdit.firstChild.textContent;
   popup.style.display = 'flex';
+};
+
+const closePopup = () => {
+  popup.style.display = 'none';
+  popupInfo.textContent = '';
+};
+
+const changeTodoText = () => {
+  if (popupInput.value !== '') {
+    todoToEdit.firstChild.textContent = popupInput.value;
+    closePopup();
+  } else {
+    popupInfo.textContent = 'Musisz podać jakąś treść!';
+  }
 };
 
 const deleteTask = e => {
