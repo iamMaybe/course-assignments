@@ -1,8 +1,8 @@
 let todoInput,
-  alertInfo,
+  errorInfo,
   addBtn,
   ulList,
-  newTask,
+  newTodo,
   idNumber = 0,
   popup,
   popupInfo,
@@ -18,9 +18,9 @@ const main = () => {
 
 const prepareDOMElements = () => {
   todoInput = document.querySelector('.todo-input');
-  alertInfo = document.querySelector('.alert-info');
-  addBtn = document.querySelector('.add-btn');
-  ulList = document.querySelector('.todo-list ul');
+  errorInfo = document.querySelector('.error-info');
+  addBtn = document.querySelector('.btn-add');
+  ulList = document.querySelector('.todolist ul');
   popup = document.querySelector('.popup');
   popupInfo = document.querySelector('.popup-info');
   popupInput = document.querySelector('.popup-input');
@@ -29,24 +29,24 @@ const prepareDOMElements = () => {
 };
 
 const prepareDOMEvents = () => {
-  addBtn.addEventListener('click', addNewTask);
-  todoInput.addEventListener('keyup', enterCheck);
+  addBtn.addEventListener('click', addNewTodo);
+  todoInput.addEventListener('keyup', enterKeyCheck);
   ulList.addEventListener('click', checkClick);
   popupAddBtn.addEventListener('click', changeTodoText);
   popupCloseBtn.addEventListener('click', closePopup);
 };
 
-const addNewTask = () => {
+const addNewTodo = () => {
   if (todoInput.value !== '') {
-    newTask = document.createElement('li');
-    newTask.setAttribute('id', `todo-${++idNumber}`);
-    newTask.textContent = todoInput.value;
+    newTodo = document.createElement('li');
+    newTodo.setAttribute('id', `todo-${++idNumber}`);
+    newTodo.textContent = todoInput.value;
     createToolsArea();
-    ulList.append(newTask);
+    ulList.append(newTodo);
     todoInput.value = '';
-    alertInfo.textContent = '';
+    errorInfo.textContent = '';
   } else {
-    alertInfo.textContent = 'Wpisz treść zadania!';
+    errorInfo.textContent = 'Wpisz treść zadania!';
   }
 };
 
@@ -56,11 +56,11 @@ const createToolsArea = () => {
   toolsPanel.innerHTML = `<button class="complete"><i class="fas fa-check"></i></button>
   <button class="edit">EDIT</button>
   <button class="delete"><i class="fas fa-times"></i></button>`;
-  newTask.append(toolsPanel);
+  newTodo.append(toolsPanel);
 };
 
-const enterCheck = e => {
-  if (e.key === 'Enter') addNewTask();
+const enterKeyCheck = e => {
+  if (e.key === 'Enter') addNewTodo();
 };
 
 const checkClick = e => {
@@ -68,13 +68,13 @@ const checkClick = e => {
     e.target.closest('li').classList.toggle('completed');
     e.target.classList.toggle('completed');
   } else if (e.target.matches('.edit')) {
-    editTask(e);
+    editTodo(e);
   } else if (e.target.matches('.delete')) {
-    deleteTask(e);
+    deleteTodo(e);
   }
 };
 
-const editTask = e => {
+const editTodo = e => {
   todoToEdit = e.target.closest('li');
   popupInput.value = todoToEdit.firstChild.textContent;
   popup.style.display = 'flex';
@@ -94,10 +94,10 @@ const changeTodoText = () => {
   }
 };
 
-const deleteTask = e => {
+const deleteTodo = e => {
   e.target.closest('li').remove();
   const allTodos = ulList.querySelectorAll('li');
-  if (allTodos.length === 0) alertInfo.textContent = 'Brak zadań na liście.';
+  if (allTodos.length === 0) errorInfo.textContent = 'Brak zadań na liście.';
 };
 
 document.addEventListener('DOMContentLoaded', main);
