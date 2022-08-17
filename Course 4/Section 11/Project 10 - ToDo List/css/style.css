@@ -56,12 +56,12 @@ h1 {
   background-color: var(--light);
 }
 
-.alert-info {
+.error-info {
   margin-top: 20px;
   color: var(--dark-blue);
 }
 
-.add-btn {
+.btn-add {
   padding: 10px 22px;
   border: none;
   border-radius: 5px;
@@ -72,21 +72,21 @@ h1 {
   transition: background-color 0.3s, color 0.3s;
 }
 
-.add-btn:hover {
+.btn-add:hover {
   color: #fff;
   background-color: var(--light-dark);
 }
 
-.todo-list {
+.todolist {
   padding: 20px 0;
 }
 
-.todo-list h3 {
+.todolist h3 {
   text-transform: uppercase;
   margin-bottom: 16px;
 }
 
-.todo-list li {
+.todolist li {
   display: flex;
   justify-content: space-between;
   align-items: center;
