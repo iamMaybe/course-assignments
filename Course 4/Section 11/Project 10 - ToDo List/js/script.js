@@ -6,7 +6,7 @@ let todoInput,
   idNumber = 0,
   popup,
   popupInfo,
-  editedTodo,
+  todoToEdit,
   popupInput,
   addPopupBtn,
   closeTodoBtn;
@@ -65,17 +65,21 @@ const checkClick = e => {
     e.target.closest('li').classList.toggle('completed');
     e.target.classList.toggle('completed');
   } else if (e.target.matches('.edit')) {
-    console.log('edit');
+    editTask(e);
   } else if (e.target.matches('.delete')) {
     deleteTask(e);
   }
 };
 
+const editTask = e => {
+  todoToEdit = e.target.closest('li');
+  popupInput.value = todoToEdit.firstChild.textContent;
+  popup.style.display = 'flex';
+};
+
 const deleteTask = e => {
   e.target.closest('li').remove();
-
   const allTodos = ulList.querySelectorAll('li');
-  console.log(allTodos);
   if (allTodos.length === 0) alertInfo.textContent = 'Brak zadań na liście.';
 };
 
