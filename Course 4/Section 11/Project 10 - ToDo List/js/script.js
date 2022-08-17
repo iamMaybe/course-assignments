@@ -3,7 +3,6 @@ let todoInput,
   addBtn,
   ulList,
   newTask,
-  allTasks,
   idNumber = 0,
   popup,
   popupInfo,
@@ -22,8 +21,7 @@ const prepareDOMElements = () => {
   alertInfo = document.querySelector('.alert-info');
   addBtn = document.querySelector('.add-btn');
   ulList = document.querySelector('.todo-list ul');
-  allTasks = document.querySelector('li');
-  popup = document.querySelector('popup');
+  popup = document.querySelector('.popup');
   popupInfo = document.querySelector('.popup-info');
   popupInput = document.querySelector('.popup-input');
   addPopupBtn = document.querySelector('.accept');
@@ -69,8 +67,16 @@ const checkClick = e => {
   } else if (e.target.matches('.edit')) {
     console.log('edit');
   } else if (e.target.matches('.delete')) {
-    console.log('delete');
+    deleteTask(e);
   }
+};
+
+const deleteTask = e => {
+  e.target.closest('li').remove();
+
+  const allTodos = ulList.querySelectorAll('li');
+  console.log(allTodos);
+  if (allTodos.length === 0) alertInfo.textContent = 'Brak zadań na liście.';
 };
 
 document.addEventListener('DOMContentLoaded', main);
