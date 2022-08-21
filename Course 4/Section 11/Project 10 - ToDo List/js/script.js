@@ -5,7 +5,7 @@ let todoInput,
   newTodo,
   idNumber = 0,
   popup,
-  popupInfo,
+  popupErrorInfo,
   todoToEdit,
   popupInput,
   popupAddBtn,
@@ -22,7 +22,7 @@ const prepareDOMElements = () => {
   addBtn = document.querySelector('.btn-add');
   ulList = document.querySelector('.todolist ul');
   popup = document.querySelector('.popup');
-  popupInfo = document.querySelector('.popup-info');
+  popupErrorInfo = document.querySelector('.popup-info');
   popupInput = document.querySelector('.popup-input');
   popupAddBtn = document.querySelector('.accept');
   popupCloseBtn = document.querySelector('.cancel');
@@ -48,6 +48,7 @@ const addNewTodo = () => {
   } else {
     errorInfo.textContent = 'Wpisz treść zadania!';
   }
+  closePopup();
 };
 
 const createToolsArea = () => {
@@ -82,7 +83,7 @@ const editTodo = e => {
 
 const closePopup = () => {
   popup.style.display = 'none';
-  popupInfo.textContent = '';
+  popupErrorInfo.textContent = '';
 };
 
 const changeTodoText = () => {
@@ -90,7 +91,7 @@ const changeTodoText = () => {
     todoToEdit.firstChild.textContent = popupInput.value;
     closePopup();
   } else {
-    popupInfo.textContent = 'Musisz podać jakąś treść!';
+    popupErrorInfo.textContent = 'Musisz podać jakąś treść!';
   }
 };
 
