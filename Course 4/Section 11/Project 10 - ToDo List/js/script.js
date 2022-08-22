@@ -37,7 +37,7 @@ const prepareDOMEvents = () => {
 };
 
 const addNewTodo = () => {
-  if (todoInput.value !== '') {
+  if (todoInput.value.trim().length !== 0) {
     newTodo = document.createElement('li');
     newTodo.setAttribute('id', `todo-${++idNumber}`);
     newTodo.textContent = todoInput.value;
@@ -77,7 +77,7 @@ const checkClick = e => {
 
 const editTodo = e => {
   todoToEdit = e.target.closest('li');
-  popupInput.value = todoToEdit.firstChild.textContent;
+  popupInput.value = todoToEdit.firstChild.textContent.trim();
   popup.style.display = 'flex';
 };
 
@@ -87,7 +87,7 @@ const closePopup = () => {
 };
 
 const changeTodoText = () => {
-  if (popupInput.value !== '') {
+  if (popupInput.value.trim().length !== 0) {
     todoToEdit.firstChild.textContent = popupInput.value;
     closePopup();
   } else {
