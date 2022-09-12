@@ -6,10 +6,91 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BEM</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body class="page">
+  <header class="header page__header">
+    <img src="" alt="" class="header__img">
+    <h1 class="header__title header__title--large">Slogan duży</h1>
+    <h2 class="header__title header__title--medium">Slogan duży</h2>
+    <button class="button button--large header__btn"></button>
+  </header>
 
+  <nav class="nav page__nav">
+    <div class="nav__logo">
+      <img src="" alt="" class="nav__logo-img">
+      <span class="nav__logo-name">Nazwa firmy</span>
+    </div>
+    <ul class="nav__list">
+      <li class="nav__item"><a href="#home" class="nav__link  nav__link--active">Home</a></li>
+      <li class="nav__item"><a href="#aboutus" class="nav__link">O nas</a></li>
+      <li class="nav__item"><a href="#offer" class="nav__link">Oferta</a></li>
+      <li class="nav__item"><a href="#contact" class="nav__link">Kontakt</a></li>
+    </ul>
+  </nav>
+
+  <main class="main page__main">
+    <section class="articles page__articles">
+      <form class="search">
+        <input class="search__input" type="text">
+        <button class="button button--italic search__btn" type="submit">Szukaj</button>
+      </form>
+      <article class="article">
+        <h3 class="article__title">Tytuł artykułu</h3>
+        <div class="article__info">
+          <span class="article__publication-date">2019-07-20</span>
+          <span class="article__author">Jan Nowak</span>
+        </div>
+        <p class="article__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam reprehenderit neque
+          incidunt
+          voluptate molestiae nesciunt? Sint eum rerum tenetur? Id maiores dolor a excepturi, ipsam tempore assumenda
+          facilis nihil similique!
+        </p>
+        <h4 class="article__subtitle">Podtytuł</h4>
+        <p class="article_text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis ut ullam dolorem
+          minus quas quam adipisci porro neque! Corrupti, tempore.</p>
+        <button class="button article__btn">Czytaj dalej</button>
+      </article>
+      <article class="article">
+        <h3 class="article__title">Tytuł artykułu</h3>
+        <div class="article__info">
+          <span class="article__publication-date">2019-07-20</span>
+          <span class="article__author">Jan Nowak</span>
+        </div>
+        <p class="article__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam reprehenderit neque
+          incidunt
+          voluptate molestiae nesciunt? Sint eum rerum tenetur? Id maiores dolor a excepturi, ipsam tempore assumenda
+          facilis nihil similique!
+        </p>
+        <h4 class="article__subtitle">Podtytuł</h4>
+        <p class="article_text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis ut ullam dolorem
+          minus quas quam adipisci porro neque! Corrupti, tempore.</p>
+        <button class="button article__btn">Czytaj dalej</button>
+      </article>
+      <article class="article">
+        <h3 class="article__title">Tytuł artykułu</h3>
+        <div class="article__info">
+          <span class="article__publication-date">2022-07-20</span>
+          <span class="article__author">Jan Nowak</span>
+        </div>
+        <p class="article__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam reprehenderit neque
+          incidunt
+          voluptate molestiae nesciunt? Sint eum rerum tenetur? Id maiores dolor a excepturi, ipsam tempore assumenda
+          facilis nihil similique!
+        </p>
+        <h4 class="article__subtitle">Podtytuł</h4>
+        <p class="article_text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis ut ullam dolorem
+          minus quas quam adipisci porro neque! Corrupti, tempore.</p>
+        <button class="button article__btn">Czytaj dalej</button>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer page__footer">
+    <p class="footer__copyright">© 2022 Copyright</p>
+    <address class="footer__address">00-000 Kraków</address>
+  </footer>
 </body>
 
 </html>

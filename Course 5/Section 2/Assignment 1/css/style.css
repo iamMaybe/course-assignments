@@ -1,7 +1,155 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
+
+.page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.page__header {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+}
+.page__nav {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+.page__main {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+}
+.page__articles {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+.page__footer {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+}
+
+.button {
+  background-color: #333;
+  color: #fff;
+  height: 100px;
+  width: 100px;
+}
+.button--large {
+  height: 200px;
+  width: 200px;
+}
+.button--italic {
+  font-style: italic;
+}
+
+.header {
+  background-color: #000;
+}
+.header__img {
+  max-width: 100%;
+}
+.header__title {
+  color: #fff;
+  font-weight: bold;
+}
+.header__title--large {
+  font-size: 2rem;
+}
+.header__title--medium {
+  font-size: 1.5rem;
+}
+.header__btn {
+  background-color: rgb(17, 255, 223);
+  color: #000;
+}
+
+.nav {
+  background-color: #fff;
+}
+.nav__logo {
+  text-align: center;
+}
+.nav__logo--img {
+  max-width: 100%;
+}
+.nav__logo--name {
+  color: rgb(17, 255, 223);
+}
+.nav__list {
+  list-style: none;
+}
+.nav__item {
+  text-align: left;
+}
+.nav__link {
+  color: #fff;
+}
+
+.main {
+  background-color: #fff;
+}
+
+.articles {
+  text-align: right;
+}
+
+.search {
+  background-color: #333;
+  color: #fff;
+}
+.search__input {
+  height: 80px;
+  width: 160px;
+}
+.search__btn {
+  background-color: #fff;
+  color: #000;
+}
+
+.article {
+  width: 60%;
+}
+.article__title {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+.article__info {
+  color: #ddd;
+}
+.article__publication-date, .article__author {
+  font-size: 0.8rem;
+}
+.article__text {
+  text-align: center;
+}
+.article__subtitle {
+  font-size: 1.6rem;
+}
+.article__btn {
+  -ms-flex-item-align: end;
+      align-self: end;
+}
+
+.footer {
+  background-color: #ddd;
+  color: #000;
+}
+.footer__copyright {
+  font-size: 1.2rem;
+}
+.footer__address {
+  font-weight: bold;
+}/*# sourceMappingURL=style.css.map */
