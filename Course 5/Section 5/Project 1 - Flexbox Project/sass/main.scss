@@ -1,7 +1,31 @@
+$main-color: #8daae5;
+$default-font: 'Arial', 'sans-serif';
+$special-font: 'PT Sans', 'Roboto', 'Arial', 'sans-serif';
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  background-color: $main-color;
+  font-family: $default-font;
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
+  font-size: 2rem;
+  background-color: #fff;
+  box-shadow: 0 0 4px 0 #000;
 }
