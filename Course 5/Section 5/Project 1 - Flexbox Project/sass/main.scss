@@ -16,16 +16,54 @@ html {
 
 body {
   font-size: 1.6rem;
-  background-color: $main-color;
   font-family: $default-font;
+  background-color: $main-color;
+  color: #fff;
 }
 
 .wrapper {
   display: flex;
   flex-wrap: wrap;
+  align-content: flex-start;
   max-width: 1000px;
+  min-height: 100vh;
   margin: 0 auto;
   font-size: 2rem;
   background-color: #fff;
   box-shadow: 0 0 4px 0 #000;
+}
+
+.logo {
+  flex-basis: 200px;
+  background-color: cadetblue;
+}
+
+.search {
+  flex-grow: 1;
+  background-color: rgb(6, 38, 39);
+}
+
+.settings {
+  padding: 0 50px;
+  background-color: rgb(121, 23, 23);
+}
+
+.menu {
+  flex-basis: 100%;
+  background-color: darkblue;
+}
+
+.main-articles {
+  flex-basis: 100%;
+  background-color: rgb(11, 19, 13);
+}
+
+.article-list {
+  flex-basis: 100%;
+  background-color: rgb(182, 131, 36);
+}
+
+.footer {
+  flex-basis: 100%;
+  background-color: rgb(75, 67, 192);
 }

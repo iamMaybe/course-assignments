@@ -13,8 +13,9 @@ html {
 
 body {
   font-size: 1.6rem;
-  background-color: #8daae5;
   font-family: "Arial", "sans-serif";
+  background-color: #8daae5;
+  color: #fff;
 }
 
 .wrapper {
@@ -23,10 +24,55 @@ body {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
   max-width: 1000px;
+  min-height: 100vh;
   margin: 0 auto;
   font-size: 2rem;
   background-color: #fff;
   -webkit-box-shadow: 0 0 4px 0 #000;
           box-shadow: 0 0 4px 0 #000;
+}
+
+.logo {
+  -ms-flex-preferred-size: 200px;
+      flex-basis: 200px;
+  background-color: cadetblue;
+}
+
+.search {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  background-color: rgb(6, 38, 39);
+}
+
+.settings {
+  padding: 0 50px;
+  background-color: rgb(121, 23, 23);
+}
+
+.menu {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  background-color: darkblue;
+}
+
+.main-articles {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  background-color: rgb(11, 19, 13);
+}
+
+.article-list {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  background-color: rgb(182, 131, 36);
+}
+
+.footer {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  background-color: rgb(75, 67, 192);
 }/*# sourceMappingURL=main.css.map */
