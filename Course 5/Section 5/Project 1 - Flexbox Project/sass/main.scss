@@ -35,12 +35,47 @@ body {
 
 .logo {
   flex-basis: 200px;
-  background-color: cadetblue;
+
+  &__img {
+    display: block;
+    width: 100%;
+  }
 }
 
 .search {
+  display: flex;
+  align-items: center;
   flex-grow: 1;
-  background-color: rgb(6, 38, 39);
+
+  &__input {
+    flex-basis: 60%;
+    height: 50%;
+    margin-right: 2vh;
+    padding: 0 10px;
+    font-size: 1.4rem;
+
+    &:focus {
+      box-shadow: 0 0 2px 1px $main-color;
+      font-weight: bold;
+    }
+  }
+
+  &__btn {
+    height: 50%;
+    font-size: 1.4rem;
+    padding: 0 10px;
+    background-color: #fff;
+    border: 2px solid #000;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: background-color 0.4s, color 0.4s;
+
+    &:hover {
+      background-color: #000;
+      color: #fff;
+    }
+  }
 }
 
 .settings {
