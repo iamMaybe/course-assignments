@@ -101,7 +101,47 @@ body {
 
 .menu {
   flex-basis: 100%;
-  background-color: darkblue;
+  height: 80px;
+  padding: 0 50px 0 80px;
+  background-color: rgb(27, 27, 29);
+  font-family: $special-font;
+
+  &__list {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    list-style: none;
+  }
+
+  &__item {
+    margin: 0 20px;
+    font-size: 2rem;
+    text-transform: uppercase;
+
+    &:hover {
+      border-bottom: 2px solid yellow;
+    }
+  }
+
+  &__item--btn {
+    margin-left: auto;
+    border: 2px solid #666;
+
+    &:hover {
+      border-color: yellow;
+    }
+  }
+
+  &__link {
+    padding: 8px;
+    display: block;
+    text-decoration: none;
+    color: #fff;
+  }
+
+  &__link--btn {
+    padding: 8px 22px;
+  }
 }
 
 .main-articles {
