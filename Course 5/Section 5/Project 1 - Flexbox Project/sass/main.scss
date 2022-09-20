@@ -47,12 +47,18 @@ body {
   align-items: center;
   flex-grow: 1;
 
-  &__input {
-    flex-basis: 60%;
+  &__input,
+  &__btn {
     height: 50%;
-    margin-right: 2vh;
+    max-height: 60px;
     padding: 0 10px;
     font-size: 1.4rem;
+  }
+
+  &__input {
+    flex-basis: 60%;
+    margin-right: 2vh;
+    padding: 0 10px;
 
     &:focus {
       box-shadow: 0 0 2px 1px $main-color;
@@ -61,9 +67,6 @@ body {
   }
 
   &__btn {
-    height: 50%;
-    font-size: 1.4rem;
-    padding: 0 10px;
     background-color: #fff;
     border: 2px solid #000;
     text-transform: uppercase;
