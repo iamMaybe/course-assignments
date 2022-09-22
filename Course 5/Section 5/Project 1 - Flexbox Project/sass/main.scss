@@ -15,10 +15,10 @@ html {
 }
 
 body {
-  font-size: 1.6rem;
-  font-family: $default-font;
   background-color: $main-color;
   color: #fff;
+  font-size: 1.6rem;
+  font-family: $default-font;
 }
 
 .wrapper {
@@ -28,9 +28,9 @@ body {
   max-width: 1000px;
   min-height: 100vh;
   margin: 0 auto;
-  font-size: 2rem;
   background-color: #fff;
   box-shadow: 0 0 4px 0 #000;
+  font-size: 2rem;
 }
 
 .logo {
@@ -145,28 +145,16 @@ body {
   }
 }
 
-.main-articles {
-  display: flex;
-  flex-basis: 100%;
-  flex-wrap: wrap;
-  background-color: $main-color;
-
-  &__intro {
-    flex-basis: 100%;
-    margin: 60px 0 30px;
-    padding: 10px 0;
-    text-align: center;
-    font-size: 4.4rem;
-    letter-spacing: 2px;
-    background-color: rgba(0, 0, 0, 0.2);
-  }
-}
-
 .article {
   flex-basis: 50%;
   padding: 30px 50px;
-  color: #333;
   text-align: center;
+  color: #333;
+
+  &--small {
+    flex-basis: 30%;
+    padding: 20px 30px;
+  }
 
   &__img {
     display: block;
@@ -178,6 +166,12 @@ body {
     font-family: $special-font;
     font-size: 3rem;
     text-transform: uppercase;
+
+    .article--small & {
+      padding: 25px 0 10px;
+      background-color: #ddd;
+      font-size: 1.8rem;
+    }
   }
 
   &__introduction {
@@ -205,9 +199,28 @@ body {
   }
 }
 
-.article-list {
+.main-articles {
+  display: flex;
   flex-basis: 100%;
-  background-color: rgb(182, 131, 36);
+  flex-wrap: wrap;
+  background-color: $main-color;
+
+  &__intro {
+    flex-basis: 100%;
+    margin: 60px 0 30px;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 4.4rem;
+    letter-spacing: 2px;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+}
+
+.article-list {
+  display: flex;
+  justify-content: space-around;
+  flex-basis: 100%;
+  flex-wrap: wrap;
 }
 
 .footer {
