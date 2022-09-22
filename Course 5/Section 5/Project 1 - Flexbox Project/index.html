@@ -18,16 +18,16 @@
 
   <div class="wrapper">
     <div class="logo">
-      <img class="logo__img" src="assets/logo.png" alt="Logo firmy">
+      <img src="assets/logo.png" alt="Logo firmy" class="logo__img">
     </div>
-    <form class="search" action="/">
-      <input class="search__input" type="text" placeholder="podaj szukaną frazę">
+    <form action="/" class="search">
+      <input type="text" class="search__input" placeholder="podaj szukaną frazę">
       <button class="search__btn">Wyszukaj</button>
     </form>
     <div class="settings">
-      <a class="settings__icon-link" href="#"><i class="fa-solid fa-sliders"></i></a>
-      <a class="settings__icon-link" href="#"><i class="fa-solid fa-sliders"></i></a>
-      <a class="settings__icon-link" href="#"><i class="fa-solid fa-sliders"></i></a>
+      <a href="#" class="settings__icon-link"><i class="fa-solid fa-sliders"></i></a>
+      <a href="#" class="settings__icon-link"><i class="fa-solid fa-sliders"></i></a>
+      <a href="#" class="settings__icon-link"><i class="fa-solid fa-sliders"></i></a>
     </div>
     <div class="menu">
       <ul class="menu__list">
@@ -37,7 +37,28 @@
         <li class="menu__item menu__item--btn"><a href="#" class=" menu__link menu__link--btn">go!</a></li>
       </ul>
     </div>
-    <section class="main-articles">Artykuły główne</section>
+    <section class="main-articles">
+      <h1 class="main-articles__intro">Polecamy!</h1>
+      <article class="article">
+        <img src="https://placeimg.com/640/480/1" alt="Losowy obrazek" class="article__img">
+        <h2 class="article__title">tytuł artykułu 1</h2>
+        <p class="article__introduction">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, dolorem
+          corrupti
+          tempora dicta, vero sit atque tenetur alias, est numquam dolores. Consequatur perspiciatis, adipisci
+          aspernatur hic exercitationem harum distinctio non?</p>
+        <a href="#" class="article__btn">Czytaj dalej</a>
+      </article>
+      <article class="article">
+        <img src="https://placeimg.com/640/480/2" alt="Losowy obrazek" class="article__img">
+        <h2 class="article__title">tytuł artykułu 2</h2>
+        <p class="article__introduction">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic est earum
+          accusantium
+          dolores iusto, quisquam unde eum expedita voluptates provident impedit, dignissimos blanditiis modi sequi
+          delectus? Ipsa iure assumenda illum?</p>
+        <a href="#" class="article__btn">Czytaj dalej</a>
+      </article>
+
+    </section>
     <section class="article-list">Lista artykułów</section>
     <footer class="footer">Stopka</footer>
   </div>
