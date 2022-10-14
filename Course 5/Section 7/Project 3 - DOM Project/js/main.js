@@ -18,13 +18,32 @@ const addElement = (e, el, txt, attr, value) => {
 
 const searchElements = (e, searchedElement) => {
   e.preventDefault();
+  result.textContent = '';
   const elements = document.querySelectorAll(searchedElement);
 
   if (elements.length) {
     result.innerHTML = `<p class="result__info">W tym dokumencie znalazłem <strong>${elements.length}</strong> elementów <strong>${searchedElement}</strong>.</p>`;
+    showInfo(elements);
   } else {
     result.innerHTML = `<p class="result__info">W tym dokumencie nie znalazłem elementów <strong>${searchedElement}</strong>.</p>`;
   }
+};
+
+const showInfo = elements => {
+  elements.forEach(element => {
+    const info = document.createElement('div');
+    info.classList.add('element-info');
+    info.innerHTML = `
+    <p>${element.nodeName}</p>
+    <p>Klasa: ${element.className}</p>
+    <p>Wysokość elementu (offsetHeight): ${element.offsetHeight}</p>
+    <p>Szerokość elementu (offsetWidth): ${element.offsetWidth}</p>
+    <p>Odległość od lewej krawędzi (offsetLeft): ${element.offsetLeft}</p>
+    <p>Odległość od górnej krawędzi (offsetTop): ${element.offsetTop}</p>
+    <p>Liczba elementów-dzieci (childElementCount): ${element.childElementCount}</p>
+    `;
+    result.append(info);
+  });
 };
 
 addForm.addEventListener('submit', e =>
