@@ -77,6 +77,28 @@ body {
   margin: 4rem auto;
 }
 
+.result {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+.result__element-info {
+  grid-area: 1/1/-1/-1;
+  text-align: center;
+}
+.result__element-details {
+  padding: 5px;
+  border: 2px solid gray;
+  font-size: 1.4rem;
+}
+
+.content {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  -webkit-box-shadow: 0 0 2px 1px gray;
+          box-shadow: 0 0 2px 1px gray;
+}
+
 .footer {
   display: -webkit-box;
   display: -ms-flexbox;
