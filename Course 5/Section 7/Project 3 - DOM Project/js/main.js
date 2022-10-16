@@ -22,17 +22,17 @@ const searchElements = (e, searchedElement) => {
   const elements = document.querySelectorAll(searchedElement);
 
   if (elements.length) {
-    result.innerHTML = `<p class="result__info">W tym dokumencie znalazłem <strong>${elements.length}</strong> elementów <strong>${searchedElement}</strong>.</p>`;
+    result.innerHTML = `<p class="result__element-info">W tym dokumencie znalazłem <strong>${elements.length}</strong> elementów <strong>${searchedElement}</strong>.</p>`;
     showInfo(elements);
   } else {
-    result.innerHTML = `<p class="result__info">W tym dokumencie nie znalazłem elementów <strong>${searchedElement}</strong>.</p>`;
+    result.innerHTML = `<p class="result__element-info">W tym dokumencie nie znalazłem elementów <strong>${searchedElement}</strong>.</p>`;
   }
 };
 
 const showInfo = elements => {
   elements.forEach(element => {
     const info = document.createElement('div');
-    info.classList.add('element-info');
+    info.classList.add('result__element-details');
     info.innerHTML = `
     <p>${element.nodeName}</p>
     <p>Klasa: ${element.className}</p>
