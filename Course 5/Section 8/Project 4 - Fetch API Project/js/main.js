@@ -27,7 +27,7 @@ const showUsers = users => {
     const item = document.createElement('div');
     item.className = 'user';
     item.innerHTML = `<div class="user__name">${user.name.title.toUpperCase()} ${user.name.first.toUpperCase()} ${user.name.last.toUpperCase()}</div>
-    <img class="user_img" src="${user.picture.medium}">`;
+    <img class="user__img" src="${user.picture.medium}">`;
     resultArea.append(item);
   });
 };
