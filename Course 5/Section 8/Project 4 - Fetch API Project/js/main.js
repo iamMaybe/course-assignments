@@ -26,7 +26,9 @@ const showUsers = users => {
   users.forEach(user => {
     const item = document.createElement('div');
     item.className = 'user';
-    item.innerHTML = `<img class="user__img" src="${user.picture.medium}">
+    item.innerHTML = `<img class="user__img" src="${
+      user.picture.medium
+    }" alt="Zdjęcie użytkownika">
     <div class="user__name">${user.name.title.toUpperCase()} ${user.name.first.toUpperCase()} ${user.name.last.toUpperCase()}</div>`;
     resultArea.append(item);
   });
