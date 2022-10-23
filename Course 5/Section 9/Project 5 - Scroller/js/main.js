@@ -2,8 +2,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const main = document.querySelector('.main');
   const sections = document.querySelectorAll('.section');
   let currentSectionIndex = 0;
+  let isThrottled = false;
 
   document.addEventListener('wheel', e => {
+    if (isThrottled) return;
+    isThrottled = true;
+
+    setTimeout(() => {
+      isThrottled = false;
+    }, 1000);
+
     const direction = e.wheelDelta < 0 ? 1 : -1;
 
     if (direction === 1) {
@@ -15,5 +23,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     currentSectionIndex = currentSectionIndex + direction;
+
+    sections[currentSectionIndex].scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
   });
 });
