@@ -47,6 +47,7 @@ class Scroller {
   };
 
   scrollToCurrentSection = () => {
+    this.selectActiveNavItem();
     this.sections[this.currentSectionIndex].scrollIntoView({
       behavior: 'smooth',
       block: 'start',
@@ -54,8 +55,8 @@ class Scroller {
   };
 
   drawNavigation = () => {
-    this.navigationContainer = document.createElement('aside');
-    this.navigationContainer.classList.add('scroller__navigation');
+    this.navContainer = document.createElement('aside');
+    this.navContainer.classList.add('scroller__navigation');
     const list = document.createElement('ul');
 
     this.sections.forEach((section, index) => {
@@ -69,7 +70,22 @@ class Scroller {
       list.append(listItem);
     });
 
-    this.navigationContainer.append(list);
-    document.body.append(this.navigationContainer);
+    this.navContainer.append(list);
+    document.body.append(this.navContainer);
+    this.selectActiveNavItem();
+  };
+
+  selectActiveNavItem = () => {
+    if (this.navContainer) {
+      const navItems = this.navContainer.querySelectorAll('li');
+
+      navItems.forEach((navItem, index) => {
+        if (index === this.currentSectionIndex) {
+          navItem.classList.add('active');
+        } else {
+          navItem.classList.remove('active');
+        }
+      });
+    }
   };
 }
