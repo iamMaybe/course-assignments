@@ -8,6 +8,8 @@ class Scroller {
     );
     this.currentSectionIndex = Math.max(currentSectionIndex, 0);
     this.isThrottled = false;
+
+    this.drawNavigation();
   }
 
   isScrolledIntoView(el) {
@@ -49,5 +51,25 @@ class Scroller {
       behavior: 'smooth',
       block: 'start',
     });
+  };
+
+  drawNavigation = () => {
+    this.navigationContainer = document.createElement('aside');
+    this.navigationContainer.classList.add('scroller__navigation');
+    const list = document.createElement('ul');
+
+    this.sections.forEach((section, index) => {
+      const listItem = document.createElement('li');
+
+      listItem.addEventListener('click', () => {
+        this.currentSectionIndex = index;
+        this.scrollToCurrentSection();
+      });
+
+      list.append(listItem);
+    });
+
+    this.navigationContainer.append(list);
+    document.body.append(this.navigationContainer);
   };
 }
