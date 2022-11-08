@@ -20,6 +20,9 @@ body {
   height: 100vh;
   text-align: center;
 }
+.section__img {
+  max-width: 100%;
+}
 .section__text {
   max-width: 75%;
   margin: 1.6rem auto;
