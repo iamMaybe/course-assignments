@@ -17,6 +17,7 @@ body {
 
 .section {
   height: 100vh;
+  touch-action: none;
   text-align: center;
 
   &__img {
