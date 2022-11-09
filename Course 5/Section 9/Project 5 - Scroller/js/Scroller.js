@@ -10,6 +10,7 @@ class Scroller {
     this.currentSectionIndex = Math.max(currentSectionIndex, 0);
     this.isThrottled = false;
     this.drawNavigation();
+    this.backToTop();
   }
 
   isScrolledIntoView(el) {
@@ -86,6 +87,15 @@ class Scroller {
           navItem.classList.remove('active');
         }
       });
+    }
+  }
+
+  backToTop() {
+    if (this.currentSectionIndex > 0) {
+      this.currentSectionIndex = 0;
+      this.scrollToCurrentSection();
+    } else {
+      this.selectActiveNavItem();
     }
   }
 }
