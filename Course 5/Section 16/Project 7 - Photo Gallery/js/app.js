@@ -17,4 +17,10 @@ class Dog {
       .then(res => res.json())
       .then(data => data.message);
   }
+
+  getRandomImageByBreed(breed) {
+    return fetch(`${this.apiUrl}/breed/${breed}/images/random`)
+      .then(res => res.json())
+      .then(data => data.message);
+  }
 }
