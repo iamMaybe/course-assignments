@@ -30,3 +30,7 @@ class Dog {
     this.listBreeds().then(breeds => console.log(breeds));
   }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  new Dog();
+});
