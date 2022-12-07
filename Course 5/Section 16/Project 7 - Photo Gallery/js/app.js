@@ -4,6 +4,7 @@ class Dog {
   constructor() {
     this.apiUrl = 'https://dog.ceo/api';
     this.imgEl = document.querySelector('.featured-dog-img');
+    this.init();
   }
 
   listBreeds() {
@@ -22,5 +23,10 @@ class Dog {
     return fetch(`${this.apiUrl}/breed/${breed}/images/random`)
       .then(res => res.json())
       .then(data => data.message);
+  }
+
+  init() {
+    this.getRandomImage().then(src => this.imgEl.setAttribute('src', src));
+    this.listBreeds().then(breeds => console.log(breeds));
   }
 }
