@@ -5,6 +5,7 @@ class Dog {
     this.apiUrl = 'https://dog.ceo/api';
     this.imgEl = document.querySelector('.featured-dog__image img');
     this.backgroundEl = document.querySelector('.featured-dog__background');
+    this.tilesEl = document.querySelector('.tiles');
     this.init();
   }
 
@@ -31,7 +32,22 @@ class Dog {
       this.imgEl.setAttribute('src', src);
       this.backgroundEl.style.backgroundImage = `url("${src}")`;
     });
-    this.listBreeds().then(breeds => console.log(breeds));
+
+    this.showAllBreeds();
+  }
+
+  showAllBreeds() {
+    this.listBreeds().then(breeds => {
+      for (const breed in breeds) {
+        if (breeds[breed].length === 0) {
+          console.log(breed);
+        } else {
+          for (const subBreed of breeds[breed]) {
+            console.log(breed, subBreed);
+          }
+        }
+      }
+    });
   }
 }
 
