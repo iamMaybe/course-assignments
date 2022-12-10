@@ -36,14 +36,43 @@ class Dog {
     this.showAllBreeds();
   }
 
+  addBreed(breed, subBreed) {
+    let name;
+    let type;
+
+    if (typeof subBreed === 'undefined') {
+      name = breed;
+      type = breed;
+    } else {
+      name = `${breed} ${subBreed}`;
+      type = `${breed}/${subBreed}`;
+    }
+
+    const tile = document.createElement('div');
+    tile.classList.add('tiles__tile');
+    const tileContent = document.createElement('div');
+    tileContent.classList.add('tiles__tile-content');
+
+    tileContent.textContent = name;
+    tileContent.addEventListener('click', () => {
+      this.getRandomImageByBreed(type).then(src => {
+        this.imgEl.setAttribute('src', src);
+        this.backgroundEl.style.backgroundImage = `url("${src}")`;
+      });
+    });
+
+    tile.append(tileContent);
+    this.tilesEl.append(tile);
+  }
+
   showAllBreeds() {
     this.listBreeds().then(breeds => {
       for (const breed in breeds) {
         if (breeds[breed].length === 0) {
-          console.log(breed);
+          this.addBreed(breed);
         } else {
           for (const subBreed of breeds[breed]) {
-            console.log(breed, subBreed);
+            this.addBreed(breed, subBreed);
           }
         }
       }
