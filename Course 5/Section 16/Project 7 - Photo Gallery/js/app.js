@@ -66,6 +66,7 @@ class Dog {
 
     tileContent.textContent = name;
     tileContent.addEventListener('click', () => {
+      scrollTo(0, 0);
       this.showLoading();
       this.getRandomImageByBreed(type).then(src => {
         this.imgEl.setAttribute('src', src);
