@@ -38,13 +38,14 @@ class Dog {
 
   init() {
     this.showLoading();
-    this.getRandomImage().then(src => {
-      this.imgEl.setAttribute('src', src);
-      this.backgroundEl.style.backgroundImage = `url("${src}")`;
-      this.hideLoading();
-    });
-
+    this.getRandomImage().then(img => this.showImageWhenReady(img));
     this.showAllBreeds();
+  }
+
+  showImageWhenReady(img) {
+    this.imgEl.setAttribute('src', img);
+    this.backgroundEl.style.backgroundImage = `url("${img}")`;
+    this.hideLoading();
   }
 
   addBreed(breed, subBreed) {
@@ -68,11 +69,9 @@ class Dog {
     tileContent.addEventListener('click', () => {
       scrollTo(0, 0);
       this.showLoading();
-      this.getRandomImageByBreed(type).then(src => {
-        this.imgEl.setAttribute('src', src);
-        this.backgroundEl.style.backgroundImage = `url("${src}")`;
-        this.hideLoading();
-      });
+      this.getRandomImageByBreed(type).then(img =>
+        this.showImageWhenReady(img)
+      );
     });
 
     tile.append(tileContent);
