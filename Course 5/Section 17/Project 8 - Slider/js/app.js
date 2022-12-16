@@ -2,12 +2,8 @@ import '../sass/style.scss';
 
 document.addEventListener('DOMContentLoaded', () => {
   const imagesContainer = document.querySelector('.slider__images-container');
-  const imgFirstContainer = document.querySelector(
-    '.slider__image-container--first'
-  );
-  const imgSecondContainer = document.querySelector(
-    '.slider__image-container--second'
-  );
+  const imgFirstContainer = document.querySelector('.slider__image-container--first');
+  const imgSecondContainer = document.querySelector('.slider__image-container--second');
   const imgFirst = document.querySelector('.slider__image-img--first');
   const imgSecond = document.querySelector('.slider__image-img--second');
   const handle = document.querySelector('.slider__handle');
@@ -49,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const adjustImagesSize = () => {
-    const imagesContainerWidth = imagesContainer.offsetWidth;
+    imagesContainerWidth = imagesContainer.offsetWidth;
     imgFirst.style.width = `${imagesContainerWidth}px`;
     imgSecond.style.width = `${imagesContainerWidth}px`;
   };
