@@ -2,10 +2,37 @@ import '../sass/style.scss';
 
 document.addEventListener('DOMContentLoaded', () => {
   const imagesContainer = document.querySelector('.slider__images-container');
+  const imgFirstContainer = document.querySelector(
+    '.slider__image-container--first'
+  );
+  const imgSecondContainer = document.querySelector(
+    '.slider__image-container--second'
+  );
   const imgFirst = document.querySelector('.slider__image-img--first');
   const imgSecond = document.querySelector('.slider__image-img--second');
   const handle = document.querySelector('.slider__handle');
-  let dragging;
+  const divider = document.querySelector('.slider__divider');
+  const imagesContainerOffsetLeft = imagesContainer.offsetLeft;
+  let imagesContainerWidth;
+  let dragging = false;
+
+  const getOffset = clientX => {
+    const offset = clientX - imagesContainerOffsetLeft;
+    if (offset < 0) {
+      return 0;
+    } else if (offset > imagesContainerWidth) {
+      return imagesContainerWidth;
+    } else {
+      return offset;
+    }
+  };
+
+  const move = clientX => {
+    const offset = getOffset(clientX);
+    const percent = (offset / imagesContainerWidth) * 100;
+    divider.style.left = `${percent}%`;
+    imgSecondContainer.style.width = `${percent}%`;
+  };
 
   const initEvents = () => {
     handle.addEventListener('mousedown', () => {
@@ -16,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     addEventListener('mousemove', e => {
       if (dragging) {
-        console.log(e.clientX);
+        move(e.clientX);
       }
     });
   };
