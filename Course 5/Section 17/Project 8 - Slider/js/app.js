@@ -7,8 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const adjustImagesSize = () => {
     const imagesContainerWidth = imagesContainer.offsetWidth;
-    imgFirst.style.width = imagesContainerWidth + 'px';
-    imgSecond.style.width = imagesContainerWidth + 'px';
+    imgFirst.style.width = `${imagesContainerWidth}px`;
+    imgSecond.style.width = `${imagesContainerWidth}px`;
   };
 
   addEventListener('resize', adjustImagesSize);
