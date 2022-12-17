@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const imgSecond = document.querySelector('.slider__image-img--second');
   const handle = document.querySelector('.slider__handle');
   const divider = document.querySelector('.slider__divider');
-  const imagesContainerOffsetLeft = imagesContainer.offsetLeft;
   let imagesContainerWidth;
+  let imagesContainerOffsetLeft;
   let dragging = false;
 
   const getOffset = clientX => {
@@ -46,6 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const adjustImagesSize = () => {
     imagesContainerWidth = imagesContainer.offsetWidth;
+    imagesContainerOffsetLeft = imagesContainer.offsetLeft;
     imgFirst.style.width = `${imagesContainerWidth}px`;
     imgSecond.style.width = `${imagesContainerWidth}px`;
   };
