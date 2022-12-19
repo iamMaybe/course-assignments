@@ -2,7 +2,6 @@ import '../sass/style.scss';
 
 document.addEventListener('DOMContentLoaded', () => {
   const imagesContainer = document.querySelector('.slider__images-container');
-  const imgFirstContainer = document.querySelector('.slider__image-container--first');
   const imgSecondContainer = document.querySelector('.slider__image-container--second');
   const imgFirst = document.querySelector('.slider__image-img--first');
   const imgSecond = document.querySelector('.slider__image-img--second');
