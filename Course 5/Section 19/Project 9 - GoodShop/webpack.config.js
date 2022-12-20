@@ -37,6 +37,11 @@ module.exports = {
         test: /\.(sa|sc|c)ss$/,
         use: [env == 'development' ? 'style-loader' : MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
       },
+      {
+        test: /\.(png|jpg)$/,
+        include: path.join(__dirname, 'assets'),
+        use: 'file-loader',
+      },
     ],
   },
 
