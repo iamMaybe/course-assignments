@@ -17,10 +17,40 @@
     <div class="container">
       <div class="header__content">
         <img class="header__logo" src="./assets/apple.svg" alt="Apple">
-        <h1 class="header__title">Wartości odżywcze</h1>
+        <h1 class="header__title">Nutritional Values</h1>
       </div>
     </div>
   </header>
+
+  <main class="main">
+    <div class="container">
+      <div class="app">
+        <div class="app__description">
+          <p class="app__description-text">A simplified table of nutrients is located below.</p>
+          <p class="app__description-text">For details, please contact via:</p>
+
+          <div class="app__contact-method">
+            <i class="app__contact-method-icon fas fa-phone"></i> +48 123 456 789
+          </div>
+          <div class="app__contact-method">
+            <i class="app__contact-method-icon fas fa-envelope"></i>
+            <a class="app__contact-method-link" href=" mailto:example@email.com">example@email.com</a>
+          </div>
+        </div>
+
+        <h2 class="app__title">List of nutritional values</h2>
+        <div class="app__values"></div>
+
+        <div class="app__images">
+          <picture>
+            <source srcset="./assets/nutrition-1000.jpg" media="(min-width: 800px)">
+            <source srcset="./assets/nutrition-800.jpg" media="(min-width: 500px)">
+            <img class="app__img" src="./assets/nutrition-500.jpg" alt="Nutrition">
+          </picture>
+        </div>
+      </div>
+    </div>
+  </main>
 </body>
 
 </html>
