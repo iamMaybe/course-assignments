@@ -42,9 +42,9 @@ const drawDesktopValues = () => {
 
   const tbody = document.createElement('tbody');
   values.forEach(value => {
-    const tr = document.createElement('tr');
-    tr.innerHTML = `<td>${value.name}</td><td>${value.calories}</td><td>${value.fat}</td><td>${value.carbs}</td><td>${value.protein}</td>`;
-    tbody.append(tr);
+    const trow = document.createElement('tr');
+    trow.innerHTML = `<td>${value.name}</td><td>${value.calories}</td><td>${value.fat}</td><td>${value.carbs}</td><td>${value.protein}</td>`;
+    tbody.append(trow);
   });
 
   table.append(thead);
