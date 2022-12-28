@@ -36,11 +36,11 @@ const drawMobileValues = () => {
 
 const drawDesktopValues = () => {
   valuesContainer.innerHTML = '';
-  let table = document.createElement('table');
-  let thead = document.createElement('thead');
+  const table = document.createElement('table');
+  const thead = document.createElement('thead');
   thead.innerHTML = '<tr><th>Name</th><th>Calories</th><th>Fat</th><th>Carbs</th><th>Protein</th></tr>';
 
-  let tbody = document.createElement('tbody');
+  const tbody = document.createElement('tbody');
   values.forEach(value => {
     const tr = document.createElement('tr');
     tr.innerHTML = `<td>${value.name}</td><td>${value.calories}</td><td>${value.fat}</td><td>${value.carbs}</td><td>${value.protein}</td>`;
