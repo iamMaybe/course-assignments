@@ -47,8 +47,7 @@ const drawDesktopValues = () => {
     tbody.append(trow);
   });
 
-  table.append(thead);
-  table.append(tbody);
+  table.append(thead, tbody);
   valuesContainer.append(table);
 };
 
