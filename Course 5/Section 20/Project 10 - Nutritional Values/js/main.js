@@ -10,6 +10,30 @@ const values = [
   { name: 'Cherry', calories: 5.2, fat: 0, carbs: 1.3, protein: 0.1 },
 ];
 
+const drawMobileValues = () => {
+  valuesContainer.innerHTML = '';
+  const list = document.createElement('ul');
+
+  values.forEach(value => {
+    const listItem = document.createElement('li');
+    const name = document.createElement('div');
+    name.innerHTML = `<strong>Name: </strong>${value.name}`;
+    const calories = document.createElement('div');
+    calories.innerHTML = `<strong>Calories: </strong>${value.calories}`;
+    const fat = document.createElement('div');
+    fat.innerHTML = `<strong>Fat: </strong>${value.fat}`;
+    const carbs = document.createElement('div');
+    carbs.innerHTML = `<strong>Carbs: </strong>${value.carbs}`;
+    const protein = document.createElement('div');
+    protein.innerHTML = `<strong>Protein: </strong>${value.protein}`;
+
+    listItem.append(name, calories, fat, carbs, protein);
+    list.append(listItem);
+  });
+
+  valuesContainer.append(list);
+};
+
 const drawDesktopValues = () => {
   valuesContainer.innerHTML = '';
   let table = document.createElement('table');
@@ -28,4 +52,4 @@ const drawDesktopValues = () => {
   valuesContainer.append(table);
 };
 
-drawDesktopValues();
+drawMobileValues();
