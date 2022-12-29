@@ -10,6 +10,10 @@ const values = [
   { name: 'Cherry', calories: 5.2, fat: 0, carbs: 1.3, protein: 0.1 },
 ];
 
+const drawValues = isDesktop => {
+  isDesktop ? drawDesktopValues() : drawMobileValues();
+};
+
 const drawMobileValues = () => {
   valuesContainer.innerHTML = '';
   const list = document.createElement('ul');
@@ -51,4 +55,7 @@ const drawDesktopValues = () => {
   valuesContainer.append(table);
 };
 
-drawMobileValues();
+drawValues(desktopViewport.matches);
+desktopViewport.addEventListener('change', () => {
+  drawValues(desktopViewport.matches);
+});
