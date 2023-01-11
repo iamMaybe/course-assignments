@@ -13,8 +13,13 @@ class Sky {
     this.ctx.fillRect(0, 0, this.width, this.height);
   }
 
+  draw() {
+    requestAnimationFrame(() => this.draw());
+  }
+
   run() {
     this.initCanvas();
+    this.draw();
   }
 }
 
