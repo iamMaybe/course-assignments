@@ -12,6 +12,11 @@ class Sky {
     this.ctx.fillStyle = '#000';
     this.ctx.fillRect(0, 0, this.width, this.height);
   }
+
+  run() {
+    this.initCanvas();
+  }
 }
 
 const sky = new Sky(document.querySelector('#canvas'));
+sky.run();
