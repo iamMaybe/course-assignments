@@ -26,7 +26,11 @@ class Sky {
       });
     }
 
-    this.stars = [];
+    this.stars = stars;
+  }
+
+  drawStars() {
+    this.stars.forEach(star => this.drawStar(star));
   }
 
   drawStar(star) {
@@ -48,11 +52,13 @@ class Sky {
   }
 
   draw() {
+    this.drawStars();
     requestAnimationFrame(() => this.draw());
   }
 
   run() {
     this.initCanvas();
+    this.generateStars(500);
     this.draw();
   }
 }
