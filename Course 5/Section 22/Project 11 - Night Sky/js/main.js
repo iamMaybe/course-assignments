@@ -44,6 +44,18 @@ class Sky {
     });
   }
 
+  generateRandomConstellation() {
+    const x = (this.width / 2) * Math.random() + 0.5;
+    const y = (this.height / 2) * Math.random() + 0.5;
+    const radius = this.height / 2;
+
+    this.constellation = {
+      stars: this.stars.filter(star => {
+        star.x > x - radius && star.x < x + radius && star.y > y - radius && star.y < y + radius;
+      }),
+    };
+  }
+
   drawOverlayer() {
     let gradient = this.ctx.createRadialGradient(
       this.width / 2,
