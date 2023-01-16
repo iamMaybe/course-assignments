@@ -57,6 +57,30 @@ class Sky {
     };
   }
 
+  drawConstellation() {
+    const { stars, isClosed } = this.constellation;
+    const starsCount = stars.length;
+
+    if (starsCount > 2) {
+      const firstStar = stars[0];
+      this.ctx.beginPath();
+      this.ctx.moveTo(firstStar.x, firstStar.y);
+      this.ctx.lineTo(stars[1].x, stars[1].y);
+
+      for (let i = 1; i < starsCount - 1; i++) {
+        const nextStar = stars[i++];
+        this.ctx.lineTo(nextStar.x, nextStar.y);
+      }
+
+      if (isClosed) {
+        this.ctx.lineTo(firstStar.x, firstStar.y);
+      }
+
+      this.ctx.strokeStyle = '#f7eada';
+      this.ctx.stroke();
+    }
+  }
+
   drawOverlayer() {
     let gradient = this.ctx.createRadialGradient(
       this.width / 2,
@@ -99,6 +123,7 @@ class Sky {
     this.clearCanvas();
     this.drawStars();
     this.updateStars();
+    this.drawConstellation();
     this.drawOverlayer();
     requestAnimationFrame(() => this.draw());
   }
