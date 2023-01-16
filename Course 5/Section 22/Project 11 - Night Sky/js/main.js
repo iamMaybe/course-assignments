@@ -45,14 +45,15 @@ class Sky {
   }
 
   generateRandomConstellation() {
-    const x = (this.width / 2) * Math.random() + 0.5;
-    const y = (this.height / 2) * Math.random() + 0.5;
-    const radius = this.height / 2;
+    const x = this.width / 2 + Math.random() * this.width - this.width / 2;
+    const y = this.height / 2 + Math.random() * this.height - this.height / 2;
+    const radius = (this.height / 2) * Math.random() * 0.5 + 0.5;
 
     this.constellation = {
-      stars: this.stars.filter(star => {
-        star.x > x - radius && star.x < x + radius && star.y > y - radius && star.y < y + radius;
-      }),
+      stars: this.stars
+        .filter(star => star.x > x - radius && star.x < x + radius && star.y > y - radius && star.y < y + radius)
+        .slice(0, Math.round(Math.random() * 7 + 3)),
+      isClosed: Math.random() > 0.5,
     };
   }
 
@@ -105,6 +106,7 @@ class Sky {
   run() {
     this.initCanvas();
     this.generateStars(500);
+    this.generateRandomConstellation();
     this.draw();
   }
 }
