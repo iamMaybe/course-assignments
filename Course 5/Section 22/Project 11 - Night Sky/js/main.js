@@ -121,19 +121,25 @@ class Sky {
     this.ctx.restore();
   }
 
-  draw() {
+  draw(now) {
     this.clearCanvas();
     this.drawStars();
     this.updateStars();
     this.drawConstellation();
     this.drawOverlayer();
-    requestAnimationFrame(() => this.draw());
+
+    if (now - this.lastConstellation > this.nextConsetllation) {
+      this.lastConstellation = now;
+      this.nextConstellation = Math.random() * 3000 + 1000;
+      this.generateRandomConstellation();
+    }
+
+    requestAnimationFrame(now => this.draw(now));
   }
 
   run() {
     this.initCanvas();
     this.generateStars(500);
-    this.generateRandomConstellation();
     this.draw();
   }
 }
