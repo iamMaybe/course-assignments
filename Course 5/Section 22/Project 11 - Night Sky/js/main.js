@@ -4,6 +4,8 @@ class Sky {
     this.ctx = canvas.getContext('2d');
     this.width = innerWidth;
     this.height = innerHeight;
+    this.lastConstellation = 0;
+    this.nextConstellation = Math.random() * 3000;
   }
 
   initCanvas() {
