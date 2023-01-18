@@ -139,6 +139,7 @@ class Sky {
 
   draw(now) {
     this.delta = now - this.lastUpdate;
+    this.clearCanvas();
     this.drawStars();
     this.updateStars();
     this.drawConstellation();
