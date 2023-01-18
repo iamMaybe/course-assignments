@@ -45,8 +45,8 @@ class Sky {
 
   updateStars() {
     this.stars.forEach(star => {
-      star.x += star.speed;
-      star.y -= (star.speed * (this.width / 2 - star.x)) / 3000;
+      star.x += star.speed * (this.delta / 16);
+      star.y -= (star.speed * (this.delta / 16) * (this.width / 2 - star.x)) / 3000;
       star.radius = star.originalRadius * (Math.random() / 4 + 0.9);
       if (star.x > this.width + 2 * star.radius) star.x = -2 * star.radius;
     });
@@ -93,7 +93,7 @@ class Sky {
 
   updateConstellation() {
     if (this.constellation.width > 0) {
-      this.constellation.width -= 0.04;
+      this.constellation.width -= 0.04 * (this.delta / 16);
     } else {
       this.constellation.width = 0;
     }
