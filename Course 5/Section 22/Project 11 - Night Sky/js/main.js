@@ -6,6 +6,10 @@ class Sky {
     this.height = innerHeight;
     this.lastConstellation = 0;
     this.nextConstellation = Math.random() * 3000;
+    this.constellation = {
+      stars: [],
+      isClosed: false,
+    };
   }
 
   initCanvas() {
