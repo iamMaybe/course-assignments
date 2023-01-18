@@ -84,6 +84,7 @@ class Sky {
       }
 
       this.ctx.strokeStyle = '#f7eada';
+      this.ctx.lineWidth = width;
       this.ctx.stroke();
     }
   }
