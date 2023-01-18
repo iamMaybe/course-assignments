@@ -52,8 +52,8 @@ class Sky {
   }
 
   generateRandomConstellation() {
-    const x = this.width / 2 + Math.random() * this.width - this.width / 2;
-    const y = this.height / 2 + Math.random() * this.height - this.height / 2;
+    const x = this.width / 2 + Math.random() * 0.8 * this.width - this.width / 2;
+    const y = this.height / 2 + Math.random() * 0.8 * this.height - this.height / 2;
     const radius = (this.height / 2) * Math.random() * 0.5 + 0.5;
 
     this.constellation = {
