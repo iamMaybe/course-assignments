@@ -9,6 +9,7 @@ class Sky {
     this.constellation = {
       stars: [],
       isClosed: false,
+      width: null,
     };
   }
 
@@ -64,7 +65,7 @@ class Sky {
   }
 
   drawConstellation() {
-    const { stars, isClosed } = this.constellation;
+    const { stars, isClosed, width } = this.constellation;
     const starsCount = stars.length;
 
     if (starsCount > 2) {
