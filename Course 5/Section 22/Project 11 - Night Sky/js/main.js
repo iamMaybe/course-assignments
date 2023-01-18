@@ -90,6 +90,14 @@ class Sky {
     }
   }
 
+  updateConstellation() {
+    if (this.constellation.width > 0) {
+      this.constellation.width -= 0.04;
+    } else {
+      this.constellation.width = 0;
+    }
+  }
+
   drawOverlayer() {
     let gradient = this.ctx.createRadialGradient(
       this.width / 2,
@@ -133,6 +141,7 @@ class Sky {
     this.drawStars();
     this.updateStars();
     this.drawConstellation();
+    this.updateConstellation();
     this.drawOverlayer();
 
     if (now - this.lastConstellation > this.nextConstellation) {
