@@ -61,6 +61,7 @@ class Sky {
         .filter(star => star.x > x - radius && star.x < x + radius && star.y > y - radius && star.y < y + radius)
         .slice(0, Math.round(Math.random() * 7 + 3)),
       isClosed: Math.random() > 0.5,
+      width: 5,
     };
   }
 
