@@ -132,7 +132,7 @@ class Sky {
     this.drawConstellation();
     this.drawOverlayer();
 
-    if (now - this.lastConstellation > this.nextConsetllation) {
+    if (now - this.lastConstellation > this.nextConstellation) {
       this.lastConstellation = now;
       this.nextConstellation = Math.random() * 3000 + 1000;
       this.generateRandomConstellation();
