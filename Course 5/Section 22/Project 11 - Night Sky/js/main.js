@@ -11,6 +11,7 @@ class Sky {
       isClosed: false,
       width: null,
     };
+    this.lastUpdate = 0;
   }
 
   initCanvas() {
