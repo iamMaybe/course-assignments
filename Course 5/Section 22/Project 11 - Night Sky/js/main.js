@@ -138,7 +138,7 @@ class Sky {
   }
 
   draw(now) {
-    this.clearCanvas();
+    this.delta = now - this.lastUpdate;
     this.drawStars();
     this.updateStars();
     this.drawConstellation();
@@ -151,13 +151,14 @@ class Sky {
       this.generateRandomConstellation();
     }
 
+    this.lastUpdate = now;
     requestAnimationFrame(now => this.draw(now));
   }
 
   run() {
     this.initCanvas();
     this.generateStars(500);
-    this.draw();
+    this.draw(0);
   }
 }
 
