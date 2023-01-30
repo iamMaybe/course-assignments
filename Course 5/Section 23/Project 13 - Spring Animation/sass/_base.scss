@@ -1,5 +1,5 @@
-$spring-left: -14%;
-$power-x: 300px;
+@use 'variables' as *;
+@use 'animations' as *;
 
 *,
 *::before,
@@ -95,39 +95,6 @@ body {
   height: 30px;
   background-color: darkred;
   animation: fill 1.5s infinite alternate ease-out paused;
-}
-
-@keyframes fill {
-  100% {
-    width: 100%;
-  }
-}
-
-@keyframes spring {
-  100% {
-    left: -14%;
-  }
-}
-
-@keyframes release-spring {
-  0% {
-    left: $spring-left;
-  }
-  100% {
-    left: -1%;
-  }
-}
-
-@keyframes fly-ball-x {
-  100% {
-    left: $power-x;
-  }
-}
-
-@keyframes fly-ball-y {
-  100% {
-    bottom: 0;
-  }
 }
 
 @media (min-width: 800px) {
