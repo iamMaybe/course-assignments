@@ -38,6 +38,8 @@ body {
   height: 50px;
   border-radius: 50%;
   background-color: cadetblue;
+  -webkit-animation: fly-ball-x 1s cubic-bezier(0.17, 0.67, 0.6, 1), fly-ball-y 1s linear;
+          animation: fly-ball-x 1s cubic-bezier(0.17, 0.67, 0.6, 1), fly-ball-y 1s linear;
 }
 
 .column {
@@ -56,6 +58,8 @@ body {
   width: 17%;
   height: 20px;
   background-color: burlywood;
+  -webkit-animation: spring 1.5s infinite alternate paused;
+          animation: spring 1.5s infinite alternate paused;
 }
 
 .panel {
@@ -99,8 +103,67 @@ body {
   width: 5%;
   height: 30px;
   background-color: darkred;
+  -webkit-animation: fill 1.5s infinite alternate ease-out paused;
+          animation: fill 1.5s infinite alternate ease-out paused;
 }
 
+@-webkit-keyframes fill {
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes fill {
+  100% {
+    width: 100%;
+  }
+}
+@-webkit-keyframes spring {
+  100% {
+    left: -14%;
+  }
+}
+@keyframes spring {
+  100% {
+    left: -14%;
+  }
+}
+@-webkit-keyframes release-spring {
+  0% {
+    left: -14%;
+  }
+  100% {
+    left: -1%;
+  }
+}
+@keyframes release-spring {
+  0% {
+    left: -14%;
+  }
+  100% {
+    left: -1%;
+  }
+}
+@-webkit-keyframes fly-ball-x {
+  100% {
+    left: 300px;
+  }
+}
+@keyframes fly-ball-x {
+  100% {
+    left: 300px;
+  }
+}
+@-webkit-keyframes fly-ball-y {
+  100% {
+    bottom: 0;
+  }
+}
+@keyframes fly-ball-y {
+  100% {
+    bottom: 0;
+  }
+}
 @media (min-width: 800px) {
   .panel {
     width: 40vw;

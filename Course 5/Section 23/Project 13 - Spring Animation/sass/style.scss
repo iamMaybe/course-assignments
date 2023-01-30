@@ -1,3 +1,6 @@
+$spring-left: -14%;
+$power-x: 300px;
+
 *,
 *::before,
 *::after {
@@ -31,6 +34,7 @@ body {
   height: 50px;
   border-radius: 50%;
   background-color: cadetblue;
+  animation: fly-ball-x 1s cubic-bezier(0.17, 0.67, 0.6, 1), fly-ball-y 1s linear;
 }
 
 .column {
@@ -49,6 +53,8 @@ body {
   width: 17%;
   height: 20px;
   background-color: burlywood;
+  animation: spring 1.5s infinite alternate paused;
+  // animation: release-spring 0.2s infinite linear;
 }
 
 .panel {
@@ -88,6 +94,40 @@ body {
   width: 5%;
   height: 30px;
   background-color: darkred;
+  animation: fill 1.5s infinite alternate ease-out paused;
+}
+
+@keyframes fill {
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes spring {
+  100% {
+    left: -14%;
+  }
+}
+
+@keyframes release-spring {
+  0% {
+    left: $spring-left;
+  }
+  100% {
+    left: -1%;
+  }
+}
+
+@keyframes fly-ball-x {
+  100% {
+    left: $power-x;
+  }
+}
+
+@keyframes fly-ball-y {
+  100% {
+    bottom: 0;
+  }
 }
 
 @media (min-width: 800px) {
