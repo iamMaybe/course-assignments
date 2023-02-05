@@ -4,7 +4,9 @@ const spring = document.querySelector('.spring');
 const fill = document.querySelector('.fill');
 
 const stretchSpring = () => {
-  console.log('stretch');
+  fill.style.animationPlayState = 'running';
+  spring.style.animationPlayState = 'running';
+  btn.textContent = 'Release the spring!';
 };
 
 const releaseSpring = () => {
