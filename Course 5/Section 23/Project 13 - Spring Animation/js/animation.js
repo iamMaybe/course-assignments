@@ -5,6 +5,7 @@ const bar = document.querySelector('.bar');
 const fill = document.querySelector('.fill');
 
 const stretchSpring = () => {
+  fill.style.animationName = 'fill';
   fill.style.animationPlayState = 'running';
   spring.style.animationPlayState = 'running';
   btn.textContent = 'Release the spring!';
@@ -33,10 +34,22 @@ const releaseSpring = () => {
 
   btn.removeEventListener('mouseup', releaseSpring);
   btn.removeEventListener('touchend', releaseSpring);
+  ball.addEventListener('animationend', resetAnimation);
 };
 
 const resetAnimation = () => {
-  console.log('reset');
+  ball.removeEventListener('animationend', resetAnimation);
+  setTimeout(() => {
+    btn.addEventListener('mousedown', stretchSpring);
+    btn.addEventListener('touchstart', stretchSpring);
+    btn.addEventListener('mouseup', releaseSpring);
+    btn.addEventListener('touchend', releaseSpring);
+    btn.style.color = '#fff';
+    btn.textContent = 'Stretch the spring!';
+    spring.style.animation = '';
+    ball.style.animation = '';
+    fill.style.animationName = 'none';
+  }, 2000);
 };
 
 btn.addEventListener('mousedown', stretchSpring);
