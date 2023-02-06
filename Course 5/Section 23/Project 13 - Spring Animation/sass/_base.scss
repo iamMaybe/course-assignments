@@ -31,7 +31,6 @@ body {
   height: 50px;
   border-radius: 50%;
   background-color: cadetblue;
-  animation: fly-ball-x 1s cubic-bezier(0.17, 0.67, 0.6, 1), fly-ball-y 1s linear;
 }
 
 .column {
@@ -51,7 +50,6 @@ body {
   height: 20px;
   background-color: burlywood;
   animation: spring 1.5s infinite alternate paused;
-  // animation: release-spring 0.2s infinite linear;
 }
 
 .panel {
