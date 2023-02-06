@@ -31,8 +31,8 @@ const releaseSpring = () => {
   document.documentElement.style.setProperty('--spring-left', `${springStyles.left}`);
   spring.style.animation = 'release-spring .2s 1 forwards linear';
 
-  btn.removeEventListener('mouseup', stretchSpring);
-  btn.removeEventListener('touchend', stretchSpring);
+  btn.removeEventListener('mouseup', releaseSpring);
+  btn.removeEventListener('touchend', releaseSpring);
 };
 
 const resetAnimation = () => {
