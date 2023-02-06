@@ -1,8 +1,14 @@
+:root {
+  --spring-left: 0;
+  --power-x: 0;
+}
+
 @-webkit-keyframes fill {
   100% {
     width: 100%;
   }
 }
+
 @keyframes fill {
   100% {
     width: 100%;
@@ -20,28 +26,28 @@
 }
 @-webkit-keyframes release-spring {
   0% {
-    left: -14%;
+    left: var(--spring-left, -14%);
   }
   100% {
-    left: -1%;
+    left: 0%;
   }
 }
 @keyframes release-spring {
   0% {
-    left: -14%;
+    left: var(--spring-left, -14%);
   }
   100% {
-    left: -1%;
+    left: 0%;
   }
 }
 @-webkit-keyframes fly-ball-x {
   100% {
-    left: 300px;
+    left: var(--power-x, 300px);
   }
 }
 @keyframes fly-ball-x {
   100% {
-    left: 300px;
+    left: var(--power-x, 300px);
   }
 }
 @-webkit-keyframes fly-ball-y {
@@ -94,8 +100,6 @@ body {
   height: 50px;
   border-radius: 50%;
   background-color: cadetblue;
-  -webkit-animation: fly-ball-x 1s cubic-bezier(0.17, 0.67, 0.6, 1), fly-ball-y 1s linear;
-          animation: fly-ball-x 1s cubic-bezier(0.17, 0.67, 0.6, 1), fly-ball-y 1s linear;
 }
 
 .column {

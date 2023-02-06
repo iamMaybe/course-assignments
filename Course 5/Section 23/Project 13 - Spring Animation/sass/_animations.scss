@@ -14,7 +14,7 @@
 
 @keyframes release-spring {
   0% {
-    left: var.$spring-left;
+    left: var(--spring-left, -14%);
   }
   100% {
     left: 0%;
@@ -23,7 +23,7 @@
 
 @keyframes fly-ball-x {
   100% {
-    left: var.$power-x;
+    left: var(--power-x, 300px);
   }
 }
 
