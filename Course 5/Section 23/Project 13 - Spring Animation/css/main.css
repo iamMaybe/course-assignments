@@ -16,12 +16,14 @@
 }
 @-webkit-keyframes spring {
   100% {
-    left: -14%;
+    -webkit-transform: translateX(-75%);
+            transform: translateX(-75%);
   }
 }
 @keyframes spring {
   100% {
-    left: -14%;
+    -webkit-transform: translateX(-75%);
+            transform: translateX(-75%);
   }
 }
 @-webkit-keyframes release-spring {
