@@ -6,15 +6,16 @@ let oldTime = 0;
 let speed = 100;
 
 const typing = newTime => {
-  if (letterIndex === text[textIndex].length) {
-    return setTimeout(() => {
-      box.textContent = '';
-      textIndex++;
-      letterIndex = 0;
-      requestAnimationFrame(typing);
-    }, 2000);
-  }
   if (newTime - oldTime > speed) {
+    if (letterIndex === text[textIndex].length) {
+      return setTimeout(() => {
+        box.textContent = '';
+        textIndex++;
+        letterIndex = 0;
+        requestAnimationFrame(typing);
+      }, 2000);
+    }
+
     oldTime = newTime;
     const letter = text[textIndex].charAt(letterIndex++);
     box.textContent += letter;
