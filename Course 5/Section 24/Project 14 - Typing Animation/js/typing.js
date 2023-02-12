@@ -8,6 +8,7 @@ let speed = 100;
 const typing = newTime => {
   if (newTime - oldTime > speed) {
     if (letterIndex === text[textIndex].length) {
+      if (textIndex === text.length - 1) return;
       return setTimeout(() => {
         box.textContent = '';
         textIndex++;
