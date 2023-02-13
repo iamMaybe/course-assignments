@@ -4,6 +4,7 @@ let letterIndex = 0;
 let textIndex = 0;
 let oldTime = 0;
 let speed = 100;
+let activeDOMElement = box;
 
 const typing = newTime => {
   if (newTime - oldTime > speed) {
@@ -14,12 +15,17 @@ const typing = newTime => {
         textIndex++;
         letterIndex = 0;
         requestAnimationFrame(typing);
-      }, 2000);
+      }, 1000);
+    } else if (letterIndex === 0) {
+      const p = document.createElement('p');
+      p.classList.add('typing__text');
+      box.append(p);
+      activeDOMElement = p;
     }
 
     oldTime = newTime;
     const letter = text[textIndex].charAt(letterIndex++);
-    box.textContent += letter;
+    activeDOMElement.textContent += letter;
   }
   requestAnimationFrame(typing);
 };
