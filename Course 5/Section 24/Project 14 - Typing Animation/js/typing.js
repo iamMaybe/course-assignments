@@ -3,7 +3,7 @@ const text = ['Hello! How was your day?', 'My day was great!', 'But tell me how 
 let letterIndex = 0;
 let textIndex = 0;
 let oldTime = 0;
-let speed = 100;
+const speed = 100;
 let activeDOMElement = box;
 
 const typing = newTime => {
