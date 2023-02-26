@@ -8,6 +8,7 @@ let letterIndex = 0;
 let textIndex = 0;
 let oldTime = 0;
 const speed = 100;
+const stop = 2000;
 let activeDOMElement = box;
 
 const typing = newTime => {
@@ -21,7 +22,7 @@ const typing = newTime => {
         textIndex++;
         letterIndex = 0;
         requestAnimationFrame(typing);
-      }, 1000);
+      }, stop);
     } else if (letterIndex === 0 || letter === '^') {
       const p = document.createElement('p');
       p.classList.add('typing__text');
