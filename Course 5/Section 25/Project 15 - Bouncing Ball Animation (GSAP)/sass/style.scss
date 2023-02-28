@@ -5,3 +5,19 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+$size: 150px;
+
+body {
+  background-color: coral;
+}
+
+.ball {
+  position: absolute;
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+  background-color: rgb(82, 6, 6);
+  bottom: calc(100% - $size);
+  left: calc(50% - $size / 2);
+}

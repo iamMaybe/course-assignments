@@ -5,4 +5,18 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+body {
+  background-color: coral;
+}
+
+.ball {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: rgb(82, 6, 6);
+  bottom: calc(100% - 150px);
+  left: calc(50% - 75px);
 }/*# sourceMappingURL=style.css.map */
