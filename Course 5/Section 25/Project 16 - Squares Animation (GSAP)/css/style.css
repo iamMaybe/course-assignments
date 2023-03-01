@@ -5,4 +5,15 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+.square {
+  width: 100px;
+  height: 100px;
+  margin: 20px;
+  background-color: cadetblue;
+}
+.square__first {
+  -webkit-transform: translateX(50vw);
+          transform: translateX(50vw);
 }/*# sourceMappingURL=style.css.map */

@@ -5,3 +5,14 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.square {
+  width: 100px;
+  height: 100px;
+  margin: 20px;
+  background-color: cadetblue;
+
+  &__first {
+    transform: translateX(50vw);
+  }
+}
