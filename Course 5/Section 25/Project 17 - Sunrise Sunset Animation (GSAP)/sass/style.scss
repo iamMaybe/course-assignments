@@ -5,3 +5,26 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  background-color: lightskyblue;
+}
+
+.sun {
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  background-color: rgb(240, 67, 14);
+  box-shadow: 0 0 13px 0 rgb(240, 67, 14);
+}
+
+.grass {
+  position: absolute;
+  bottom: 0;
+  top: 70%;
+  width: 100%;
+  background-color: green;
+}
