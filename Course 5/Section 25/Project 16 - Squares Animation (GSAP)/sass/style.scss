@@ -11,6 +11,7 @@
   height: 100px;
   margin: 20px;
   background-color: cadetblue;
+  visibility: hidden;
 
   &__first {
     transform: translateX(50vw);

@@ -12,6 +12,7 @@
   height: 100px;
   margin: 20px;
   background-color: cadetblue;
+  visibility: hidden;
 }
 .square__first {
   -webkit-transform: translateX(50vw);
