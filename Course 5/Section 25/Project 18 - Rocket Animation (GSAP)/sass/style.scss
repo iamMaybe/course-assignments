@@ -5,3 +5,15 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  background-color: #021631;
+}
+
+.rocket {
+  position: absolute;
+  left: 50%;
+  bottom: 150px;
+  height: 200px;
+  transform: translateX(-50%);
+}

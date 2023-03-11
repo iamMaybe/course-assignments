@@ -5,4 +5,17 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+body {
+  background-color: #021631;
+}
+
+.rocket {
+  position: absolute;
+  left: 50%;
+  bottom: 150px;
+  height: 200px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }/*# sourceMappingURL=style.css.map */
