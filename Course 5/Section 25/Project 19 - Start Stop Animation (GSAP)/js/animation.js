@@ -16,12 +16,6 @@ tl.to(square, { duration: 1, x: 200 })
   .to(square, { duration: 1, y: 0 })
   .to(square, { duration: 1, backgroundColor: 'red' }, 'half');
 
-const animation = () => {
-  if (tl.paused()) {
-    tl.resume();
-  } else {
-    tl.pause();
-  }
-};
+const animation = () => tl.paused(!tl.paused());
 
 btn.addEventListener('click', animation);
