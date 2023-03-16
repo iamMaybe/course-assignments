@@ -5,4 +5,14 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+body {
+  background-color: #000;
+}
+
+.sun {
+  display: block;
+  margin: 0 auto;
+  width: 60%;
 }/*# sourceMappingURL=style.css.map */
