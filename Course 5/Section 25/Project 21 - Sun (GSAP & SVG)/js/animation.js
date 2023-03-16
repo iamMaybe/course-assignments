@@ -1,5 +1,5 @@
 const streaks = document.querySelector('#streaks');
-const polygons = document.querySelectorAll('#streaks polygon');
+const polygons = streaks.querySelectorAll('polygon');
 
 gsap.set(streaks, { transformOrigin: '50%', scale: 0.7 });
 gsap.to(streaks, { duration: 2, rotation: 360, repeat: -1, ease: 'none' });
