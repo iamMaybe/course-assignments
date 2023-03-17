@@ -1,6 +1,4 @@
-const scale = () => {
-  return Math.random() * 3 + 0.1;
-};
+const scale = () => Math.random() * 3 + 0.1;
 
 const color = () => {
   const colors = ['green', 'red', 'yellow'];
