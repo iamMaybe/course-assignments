@@ -20,5 +20,13 @@ const bars = () => {
   return tl;
 };
 
+const move = () => {
+  const tl = gsap.timeline();
+  const legs = document.querySelectorAll('#leg-right, #leg-left');
+
+  tl.to(legs, { duration: 0.5, y: -60, ease: 'none', stagger: { each: 0.5, repeat: -1, yoyo: true } });
+  return tl;
+};
+
 const main = gsap.timeline();
-main.add(bars());
+main.add(bars(), move());
