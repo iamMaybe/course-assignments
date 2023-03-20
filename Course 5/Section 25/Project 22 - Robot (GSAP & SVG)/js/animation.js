@@ -20,6 +20,20 @@ const bars = () => {
   return tl;
 };
 
+const blink = () => {
+  const tl = gsap.timeline({ repeat: -1, repeatDelay: 3, delay: 2 });
+  const eyes = document.querySelectorAll('#eye-left, #eye-right');
+
+  tl.set(eyes, { transformOrigin: '50%' })
+    .to(eyes, { duration: 0.1, scaleY: 0, fill: '#231f20' })
+    .to(eyes, { duration: 0.05, scaleY: 1, fill: '#48b3e6' })
+    .to(eyes, { duration: 0.12, scaleY: 0, fill: '#231f20' }, '+=0.5')
+    .to(eyes, { duration: 0.03, scaleY: 1, fill: '#48b3e6' })
+    .to(eyes, { duration: 0.08, scaleY: 0, fill: '#231f20' }, '+=0.15')
+    .to(eyes, { duration: 0.08, scaleY: 1, fill: '#48b3e6' });
+  return tl;
+};
+
 const move = () => {
   const tl = gsap.timeline();
   const legs = document.querySelectorAll('#leg-right, #leg-left');
@@ -29,4 +43,4 @@ const move = () => {
 };
 
 const main = gsap.timeline();
-main.add(bars(), move());
+main.add(bars(), move(), blink());
