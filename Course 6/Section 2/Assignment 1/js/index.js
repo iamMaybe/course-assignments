@@ -18,33 +18,24 @@
 //   console.log('Water boiled!');
 //   makeATea(() => {
 //     console.log('Tea brewed!');
-
-//     waitForRightTemperature(() => {
-//       console.log('The temperature is right, time to drink!');
-//     });
+//     waitForRightTemperature(() => console.log('The temperature is right, time to drink!'));
 //   });
 // });
 
 // // 2. PROMISE
 // const boilWater = () => {
 //   console.log('Boiling water...');
-//   return new Promise((resolve, reject) => {
-//     setTimeout(resolve, 1000);
-//   });
+//   return new Promise((resolve, reject) => setTimeout(resolve, 1000));
 // };
 
 // const makeATea = () => {
 //   console.log('Tea brewing...');
-//   return new Promise((resolve, reject) => {
-//     setTimeout(resolve, 2000);
-//   });
+//   return new Promise((resolve, reject) => setTimeout(resolve, 2000));
 // };
 
 // const waitForRightTemperature = () => {
 //   console.log('Waiting for the right temperature...');
-//   return new Promise((resolve, reject) => {
-//     setTimeout(resolve, 750);
-//   });
+//   return new Promise((resolve, reject) => setTimeout(resolve, 750));
 // };
 
 // boilWater()
@@ -56,30 +47,22 @@
 //     console.log('Tea brewed!');
 //     return waitForRightTemperature();
 //   })
-//   .then(() => {
-//     console.log('The temperature is right, time to drink!');
-//   });
+//   .then(() => console.log('The temperature is right, time to drink!'));
 
 // 3. ASYNC/AWAIT
 const boilWater = () => {
   console.log('Boiling water...');
-  return new Promise((resolve, reject) => {
-    setTimeout(resolve, 1000);
-  });
+  return new Promise((resolve, reject) => setTimeout(resolve, 1000));
 };
 
 const makeATea = () => {
   console.log('Tea brewing...');
-  return new Promise((resolve, reject) => {
-    setTimeout(resolve, 2000);
-  });
+  return new Promise((resolve, reject) => setTimeout(resolve, 2000));
 };
 
 const waitForRightTemperature = () => {
   console.log('Waiting for the right temperature...');
-  return new Promise((resolve, reject) => {
-    setTimeout(resolve, 750);
-  });
+  return new Promise((resolve, reject) => setTimeout(resolve, 750));
 };
 
 (async () => {

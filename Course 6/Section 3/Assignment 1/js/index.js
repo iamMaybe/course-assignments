@@ -9,16 +9,12 @@
 //   }
 // };
 
-// const pay = callback => {
-//   callback(null);
-// };
+// const pay = callback => callback(null);
 
 // doMyJob(5, err => {
 //   if (err === null) {
 //     console.log('Task completed!');
-//     pay(() => {
-//       console.log('Payment made!');
-//     });
+//     pay(() => console.log('Payment made!'));
 //   } else {
 //     console.log('Error!', err);
 //   }
@@ -44,12 +40,8 @@
 //     console.log('Task completed!');
 //     return pay();
 //   })
-//   .then(() => {
-//     console.log('Payment made!');
-//   })
-//   .catch(err => {
-//     console.log('Error!', err);
-//   });
+//   .then(() => console.log('Payment made!'))
+//   .catch(err => console.log('Error!', err));
 
 // 3. ASYNC/AWAIT
 const doMyJob = hours => {
