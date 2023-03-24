@@ -25,17 +25,17 @@
 // // 2. PROMISE
 // const boilWater = () => {
 //   console.log('Boiling water...');
-//   return new Promise((resolve, reject) => setTimeout(resolve, 1000));
+//   return new Promise(resolve => setTimeout(resolve, 1000));
 // };
 
 // const makeATea = () => {
 //   console.log('Tea brewing...');
-//   return new Promise((resolve, reject) => setTimeout(resolve, 2000));
+//   return new Promise(resolve => setTimeout(resolve, 2000));
 // };
 
 // const waitForRightTemperature = () => {
 //   console.log('Waiting for the right temperature...');
-//   return new Promise((resolve, reject) => setTimeout(resolve, 750));
+//   return new Promise(resolve => setTimeout(resolve, 750));
 // };
 
 // boilWater()
@@ -52,17 +52,17 @@
 // 3. ASYNC/AWAIT
 const boilWater = () => {
   console.log('Boiling water...');
-  return new Promise((resolve, reject) => setTimeout(resolve, 1000));
+  return new Promise(resolve => setTimeout(resolve, 1000));
 };
 
 const makeATea = () => {
   console.log('Tea brewing...');
-  return new Promise((resolve, reject) => setTimeout(resolve, 2000));
+  return new Promise(resolve => setTimeout(resolve, 2000));
 };
 
 const waitForRightTemperature = () => {
   console.log('Waiting for the right temperature...');
-  return new Promise((resolve, reject) => setTimeout(resolve, 750));
+  return new Promise(resolve => setTimeout(resolve, 750));
 };
 
 (async () => {
