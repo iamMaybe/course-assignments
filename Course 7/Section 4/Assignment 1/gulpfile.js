@@ -1,8 +1,9 @@
-const { src, dest } = require('gulp');
+const { src, dest, series } = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
 const autoprefixer = require('gulp-autoprefixer');
 const cssnano = require('gulp-cssnano');
 const rename = require('gulp-rename');
+const babel = require('gulp-babel');
 
 function sassCompiler(done) {
   src('./src/sass/**/*.scss')
@@ -14,4 +15,11 @@ function sassCompiler(done) {
   done();
 }
 
-exports.default = sassCompiler;
+function javaScript(done) {
+  src('./src/js/**/*.js')
+    .pipe(babel({ presets: ['@babel/preset-env'] }))
+    .pipe(dest('./dist/js'));
+  done();
+}
+
+exports.default = series(sassCompiler, javaScript);
