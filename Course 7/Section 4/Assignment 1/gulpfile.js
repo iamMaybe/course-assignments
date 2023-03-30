@@ -5,6 +5,7 @@ const cssnano = require('gulp-cssnano');
 const rename = require('gulp-rename');
 const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');
+const webp = require('gulp-webp');
 
 function sassCompiler(done) {
   src('./src/sass/**/*.scss')
@@ -25,4 +26,9 @@ function javaScript(done) {
   done();
 }
 
-exports.default = series(sassCompiler, javaScript);
+function convertImages(done) {
+  src('./src/img/*').pipe(webp()).pipe(dest('./dist/img'));
+  done();
+}
+
+exports.default = series(sassCompiler, javaScript, convertImages);
