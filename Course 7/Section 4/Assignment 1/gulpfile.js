@@ -1,4 +1,4 @@
-const { src, dest, series } = require('gulp');
+const { src, dest, parallel, series } = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
 const autoprefixer = require('gulp-autoprefixer');
 const cssnano = require('gulp-cssnano');
@@ -7,6 +7,7 @@ const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');
 const webp = require('gulp-webp');
 const sourcemaps = require('gulp-sourcemaps');
+const browserSync = require('browser-sync').create();
 
 const paths = {
   sass: './src/sass/**/*.scss',
@@ -45,4 +46,14 @@ function convertImages(done) {
   done();
 }
 
-exports.default = series(sassCompiler, javaScript, convertImages);
+function startBrowserSync(done) {
+  browserSync.init({
+    server: {
+      baseDir: './',
+    },
+  });
+  done();
+}
+
+const mainFunctions = parallel(sassCompiler, javaScript, convertImages);
+exports.default = series(mainFunctions, startBrowserSync);
