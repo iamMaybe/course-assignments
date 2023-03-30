@@ -7,27 +7,36 @@ const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');
 const webp = require('gulp-webp');
 
+const paths = {
+  sass: './src/sass/**/*.scss',
+  js: './src/js/**/*.js',
+  img: './src/img/*',
+  sassDest: './dist/css',
+  jsDest: './dist/js',
+  imgDest: './dist/img',
+};
+
 function sassCompiler(done) {
-  src('./src/sass/**/*.scss')
+  src(paths.sass)
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer())
     .pipe(cssnano())
     .pipe(rename({ suffix: '.min' }))
-    .pipe(dest('./dist/css'));
+    .pipe(dest(paths.sassDest));
   done();
 }
 
 function javaScript(done) {
-  src('./src/js/**/*.js')
+  src(paths.js)
     .pipe(babel({ presets: ['@babel/preset-env'] }))
     .pipe(uglify())
     .pipe(rename({ suffix: '.min' }))
-    .pipe(dest('./dist/js'));
+    .pipe(dest(paths.jsDest));
   done();
 }
 
 function convertImages(done) {
-  src('./src/img/*').pipe(webp()).pipe(dest('./dist/img'));
+  src(paths.img).pipe(webp()).pipe(dest(paths.imgDest));
   done();
 }
 
