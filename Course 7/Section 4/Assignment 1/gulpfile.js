@@ -1,4 +1,5 @@
 const { src, dest, parallel, series, watch } = require('gulp');
+const kit = require('gulp-kit-2');
 const sass = require('gulp-sass')(require('sass'));
 const autoprefixer = require('gulp-autoprefixer');
 const cssnano = require('gulp-cssnano');
@@ -8,7 +9,6 @@ const uglify = require('gulp-uglify');
 const webp = require('gulp-webp');
 const sourcemaps = require('gulp-sourcemaps');
 const clean = require('gulp-clean');
-const kit = require('gulp-kit-2');
 const browserSync = require('browser-sync').create();
 const reload = browserSync.reload;
 
@@ -22,6 +22,11 @@ const paths = {
   jsDest: './dist/js',
   imgDest: './dist/img',
 };
+
+function handleKits(done) {
+  src(paths.html).pipe(kit()).pipe(dest('./'));
+  done();
+}
 
 function sassCompiler(done) {
   src(paths.sass)
@@ -53,11 +58,6 @@ function convertImages(done) {
 
 function cleanDist(done) {
   src(paths.dist, { read: false }).pipe(clean());
-}
-
-function handleKits(done) {
-  src(paths.html).pipe(kit()).pipe(dest('./'));
-  done();
 }
 
 function startBrowserSync(done) {
